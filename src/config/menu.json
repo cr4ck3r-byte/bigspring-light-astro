@@ -4,16 +4,13 @@
       "name": "Home",
       "url": "/"
     },
+
     {
-      "name": "Blog",
-      "url": "/blog"
-    },
-    {
-      "name": "Pricing",
+      "name": "Precios",
       "url": "/pricing"
     },
     {
-      "name": "Contact",
+      "name": "Contacto",
       "url": "/contact"
     },
     {
@@ -21,8 +18,8 @@
       "url": "/faq"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Inicia sesión",
+      "url": "https://app.barbersoftly.com"
     }
   ],
   "footer": [
@@ -30,11 +27,11 @@
       "name": "Company",
       "menu": [
         {
-          "text": "Pricing",
+          "text": "Precios",
           "url": "/pricing"
         },
         {
-          "text": "Quick Start",
+          "text": "Empieza aquí",
           "url": "#"
         }
       ]
@@ -64,11 +61,11 @@
           "url": "/faq"
         },
         {
-          "text": "Privacy Policy",
+          "text": "Politica de Privacidad",
           "url": "/privacy-policy"
         },
         {
-          "text": "Terms & Conditions",
+          "text": "Terminos y Condiciones",
           "url": "/terms-conditions"
         }
       ]

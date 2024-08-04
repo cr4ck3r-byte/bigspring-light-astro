@@ -1,29 +1,62 @@
 ---
-title: "Privacy"
-description: "this is meta description"
+title: "Política de Privacidad de Barbersoftly"
+description: "Barbersoftly Política de Privacidad"
 draft: false
 ---
 
-#### Responsibility of Contributors
+#### 1. Introducción
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+Bienvenido a la Política de Privacidad de Barbersoftly. En Barbersoftly, nos comprometemos a proteger su privacidad y a manejar sus datos personales con el máximo cuidado y respeto. Esta política describe cómo recopilamos, usamos y protegemos su información personal cuando utiliza nuestra plataforma de gestión de barberías.
 
-pretium, aliquam sit. Praesent elementum magna amet, tincidunt eros, nibh in leo. Malesuada purus, lacus, at aliquam suspendisse tempus. Quis tempus amet, velit nascetur sollicitudin. At sollicitudin eget amet in. Eu velit nascetur sollicitudin erhdfvssfvrgss eget viverra nec elementum. Lacus, facilisis tristique lectus in.
+#### 2. Información que recopilamos
 
-#### Gathering of Personal Information
+Recopilamos la siguiente información:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+Información de identificación personal (nombre, dirección de correo electrónico, número de teléfono)
+Información de la barbería (nombre del negocio, dirección, horarios de operación)
+Datos de reservas (fechas, horas, servicios solicitados)
+Datos de uso de la plataforma
+Información del dispositivo y navegador
 
-#### Protection of Personal- Information
+#### 3. Cómo utilizamos su información
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus.
+Utilizamos su información para:
 
-Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat
+Proporcionar y mejorar nuestros servicios
+Procesar reservas
+Enviar notificaciones sobre reservas y actualizaciones del servicio
+Ofrecer soporte al cliente
+Analizar el uso de nuestra plataforma para mejorar la experiencia del usuario
+Cumplir con obligaciones legales
 
-#### Privacy Policy Changes
+#### 4. Compartir información
 
-1. Sll the Themefisher items are designed to be with the latest , We check all
-2. comments that threaten or harm the reputation of any person or organization
-3. personal information including, but limited to, email addresses, telephone numbers
-4. Any Update come in The technology Customer will get automatic Notification.
+No vendemos su información personal. Podemos compartir su información con:
+
+Proveedores de servicios que nos ayudan a operar nuestra plataforma
+Autoridades legales cuando sea requerido por ley
+Terceros en caso de una fusión, adquisición o venta de activos
+
+#### 5. Seguridad de los datos
+
+Implementamos medidas de seguridad técnicas y organizativas para proteger su información. Sin embargo, ningún sistema es completamente seguro, y no podemos garantizar la seguridad absoluta de su información.
+
+#### 6. Sus derechos
+
+Dependiendo de su ubicación, puede tener derecho a:
+
+Acceder a su información personal
+Corregir información inexacta
+Eliminar su información
+Oponerse al procesamiento de su información
+Retirar su consentimiento en cualquier momento
+
+#### 7. Cambios en esta política
+
+Podemos actualizar esta política de privacidad ocasionalmente. Le notificaremos cualquier cambio significativo a través de nuestra plataforma o por correo electrónico.
+
+#### 8. Contacto
+
+Si tiene preguntas sobre esta política de privacidad, por favor contáctenos en:
+soporte@barbersoftly.com
+Al utilizar Barbersoftly, usted acepta las prácticas descritas en esta Política de Privacidad.

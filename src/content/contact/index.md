@@ -1,12 +1,11 @@
 ---
-title: "Contact Us"
+title: "Contáctanos"
 draft: false
-info: 
-  title: Why you should contact us!
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt.
-  contacts: 
-    - "phone: +88 125 256 452"
-    - "Mail: [info@bigspring.com](mailto:info@bigspring.com)"
-    - "Address: 360 Main rd, Rio, Brazil"
+info:
+  title: ¡Por qué deberías contactarnos!
+  description: Barbersoftly está aquí para ayudarte a optimizar la gestión de tu barbería. Ya sea que tengas preguntas sobre nuestros planes, necesites asistencia técnica o busques una solución personalizada, estamos a tu disposición. ¡No dudes en ponerte en contacto con nosotros!.
+  contacts:
+    - "WhatsApp: +595 995 601 201"
+    - "Mail: [soporte@barbersoftly.com](mailto:soporte@barbersoftly.com)"
+    - "Address: Paraguay"
 ---
-
