@@ -5,7 +5,7 @@ banner:
   image: /images/banner-art.png
   button:
     label: "Empieza aquí"
-    link: "/contact"
+    link: "https://app.barbersoftly.com/signup"
     enable: true
 
 # feature
@@ -40,7 +40,7 @@ services:
     button:
       enable: true
       label: Descubrir Más
-      link: /contact
+      link: "https://app.barbersoftly.com/signup"
 
   - title: "Ahorra Tiempo y Simplifica tu Trabajo"
     content: "Olvídate de invertir tiempo en responder y organizar manualmente las reservas. Con Barbersoftly, la gestión de citas se automatiza, permitiéndote enfocarte en lo que mejor sabes hacer: atender a tus clientes. Comparte el enlace de tu barbería y deja que el sistema se encargue del resto."
@@ -49,7 +49,7 @@ services:
     button:
       enable: true
       label: Descubrir Más
-      link: /contact
+      link: "https://app.barbersoftly.com/signup"
 
   - title: "Flexibilidad en Horarios y Servicios"
     content: "Modifica tu horario de trabajo según tus necesidades, y actualiza tus servicios y precios fácilmente. Con Barbersoftly, tienes el control total sobre tu barbería, pudiendo ajustar tus ofertas en cualquier momento."
@@ -58,7 +58,7 @@ services:
     button:
       enable: true
       label: Descubrir Más
-      link: /contact
+      link: "https://app.barbersoftly.com/signup"
 
   - title: "Notificaciones Automáticas y Recordatorios"
     content: "Nuestras notificaciones automáticas aseguran que tus clientes siempre estén al tanto de sus reservas, reduciendo las ausencias y mejorando la satisfacción del cliente."
@@ -67,7 +67,7 @@ services:
     button:
       enable: true
       label: Descubrir Más
-      link: /contact
+      link: "https://app.barbersoftly.com/signup"
 
 # workflow
 workflow:
@@ -82,6 +82,6 @@ call_to_action:
   image: "/images/cta.png"
   button:
     enable: true
-    label: "Contáctanos"
-    link: "/contact"
+    label: "Empieza aquí"
+    link: "https://app.barbersoftly.com/signup"
 ---
