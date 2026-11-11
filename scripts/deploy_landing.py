@@ -18,6 +18,8 @@ import uuid
 
 APPLICATION = "landing"
 DOMAIN = "barbersoftly.com"
+# "/" on the apex is the client app; the landing home page is served at /home.
+LANDING_PATH = "/home"
 DEFAULT_ROOT = "/var/www/barbersoftly-releases/landing"
 KEEP_RELEASES = 5
 RELEASE_ID = re.compile(r"[a-f0-9]{40}-[0-9]+-[0-9]+")
@@ -86,12 +88,12 @@ def release_target(root, link):
 
 
 def check_served(revision, override=None):
-    """Fetch "/" from this origin and confirm the expected release is served."""
-    url = override or "https://" + DOMAIN
+    """Fetch the landing home from this origin and confirm the expected release is served."""
+    url = override or "https://" + DOMAIN + LANDING_PATH
     command = ["curl", "--fail", "--silent", "--show-error", "--max-time", "10"]
     if not override:
         command += ["--resolve", DOMAIN + ":443:127.0.0.1"]
-    command.append(url.rstrip("/") + "/?release-check")
+    command.append(url + "?release-check")
     html = subprocess.run(command, check=True, capture_output=True, text=True).stdout
     match = RELEASE_META.search(html)
     if revision and (not match or match.group(1) != revision):
