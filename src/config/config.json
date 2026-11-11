@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Barbersoftly",
-    "base_url": "https://barbersoftly.app",
+    "base_url": "https://barbersoftly.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
