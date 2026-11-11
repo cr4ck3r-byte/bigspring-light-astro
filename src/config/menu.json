@@ -1,10 +1,9 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "Inicio",
       "url": "/"
     },
-
     {
       "name": "Precios",
       "url": "/pricing"
@@ -24,48 +23,52 @@
   ],
   "footer": [
     {
-      "name": "Company",
+      "name": "Barbersoftly",
       "menu": [
         {
           "text": "Precios",
           "url": "/pricing"
         },
         {
-          "text": "Empieza aquí",
-          "url": "#"
+          "text": "Empezá ahora",
+          "url": "https://app.barbersoftly.com/signup"
+        },
+        {
+          "text": "Iniciar sesión",
+          "url": "https://app.barbersoftly.com"
         }
       ]
     },
     {
-      "name": "Product",
+      "name": "Para clientes",
       "menu": [
         {
-          "text": "Features",
-          "url": "#"
+          "text": "Reservar una cita",
+          "url": "/reservar"
         },
         {
-          "text": "Platform",
-          "url": "#"
-        },
-        {
-          "text": "Pricing",
-          "url": "/pricing"
+          "text": "Mis citas",
+          "url": "/mis-citas"
         }
       ]
     },
     {
-      "name": "Support",
+      "name": "Soporte",
       "menu": [
         {
-          "text": "FAQ",
+          "text": "Preguntas frecuentes",
           "url": "/faq"
         },
         {
-          "text": "Politica de Privacidad",
+          "text": "Contacto",
+          "url": "/contact"
+        },
+        {
+          "text": "Política de privacidad",
           "url": "/privacy-policy"
         },
         {
-          "text": "Terminos y Condiciones",
+          "text": "Términos y condiciones",
           "url": "/terms-conditions"
         }
       ]

@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Barbersoftly",
-    "base_url": "https://barbersoftly.app",
+    "base_url": "https://barbersoftly.com",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
@@ -19,15 +19,15 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Empieza aquí",
-    "link": "/contact"
+    "label": "Empezá ahora",
+    "link": "https://app.barbersoftly.com/signup"
   },
 
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
     "footer_content": "",
-    "copyright": "© 2024 · Barbersoftly · All rights reserved"
+    "copyright": "© 2026 · Barbersoftly · Todos los derechos reservados"
   },
 
   "metadata": {
