@@ -10,7 +10,7 @@ if (!dist || !/^[a-f0-9]{40}$/.test(revision ?? "")) {
 }
 
 // "/deployment.json" on the apex belongs to the client app, so the deploy
-// health check reads the revision from this tag on the landing's "/".
+// health check reads the revision from this tag on the landing home (/home).
 const indexPath = path.join(dist, "index.html");
 const html = fs.readFileSync(indexPath, "utf8");
 if (!html.includes("</head>")) throw new Error("index.html has no </head>");

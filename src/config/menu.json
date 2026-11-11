@@ -2,7 +2,7 @@
   "main": [
     {
       "name": "Inicio",
-      "url": "/"
+      "url": "/home"
     },
     {
       "name": "Precios",
@@ -44,7 +44,7 @@
       "menu": [
         {
           "text": "Reservar una cita",
-          "url": "/reservar"
+          "url": "/"
         },
         {
           "text": "Mis citas",

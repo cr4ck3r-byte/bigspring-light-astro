@@ -18,7 +18,14 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      // The landing home is served at /home; "/" on the apex is the client app.
+      serialize(item) {
+        const url = new URL(item.url);
+        if (url.pathname === "/") url.pathname = "/home";
+        return { ...item, url: url.href.replace(/\/$/, "") };
+      },
+    }),
     tailwind({
       config: {
         applyBaseStyles: false,
