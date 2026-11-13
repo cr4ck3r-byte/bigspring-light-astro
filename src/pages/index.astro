@@ -15,6 +15,13 @@ const { banner, feature, services, workflow, call_to_action } = homepage.data;
     <div class="container">
       <div class="row text-center">
         <div class="mx-auto lg:col-10">
+          {
+            banner?.badge && (
+              <span class="mb-5 inline-block rounded-full bg-primary px-5 py-2 text-base font-bold text-white">
+                {banner.badge}
+              </span>
+            )
+          }
           <h1 class="font-primary font-bold">{banner?.title}</h1>
           {
             banner?.content && (

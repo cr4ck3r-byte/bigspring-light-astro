@@ -4,6 +4,7 @@ import { defineCollection, z } from "astro:content";
 const homepage = defineCollection({
   schema: z.object({
     banner: z.object({
+      badge: z.string().optional(),
       title: z.string().optional(),
       content: z.string().optional(),
       image: z.string().optional(),
