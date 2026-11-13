@@ -1,10 +1,11 @@
 ---
 banner:
+  badge: "🎁 Primer mes gratis en todos los planes"
   title: Tu barbería organizada, tus clientes reservando solos
-  content: Barbersoftly es el sistema de reservas y gestión para barberías en Paraguay. Tus clientes reservan online las 24 horas, cada barbero tiene su agenda y vos ves todo el movimiento del negocio desde un mismo panel.
+  content: Barbersoftly es el sistema de reservas y gestión para barberías en Paraguay. Tus clientes reservan online las 24 horas, cada barbero tiene su agenda y vos ves todo el movimiento del negocio desde un mismo panel. **Probalo gratis durante tu primer mes, sin tarjeta.**
   image: /images/banner-art.png
   button:
-    label: "Empezá ahora"
+    label: "Probá gratis 1 mes"
     link: "https://app.barbersoftly.com/signup"
     enable: true
 
@@ -66,7 +67,7 @@ services:
       - "/images/notification.png"
     button:
       enable: true
-      label: Empezá ahora
+      label: Probá gratis 1 mes
       link: "https://app.barbersoftly.com/signup"
 
 # workflow
@@ -78,10 +79,10 @@ workflow:
 # call_to_action
 call_to_action:
   title: ¿Listo para empezar?
-  content: Creá tu cuenta, cargá tus servicios y horarios, y compartí tu enlace de reservas hoy mismo. Planes desde Gs. 99.000 por mes.
+  content: Creá tu cuenta, cargá tus servicios y horarios, y compartí tu enlace de reservas hoy mismo. El primer mes es gratis, sin tarjeta; después, planes desde Gs. 99.000 por mes.
   image: "/images/cta.png"
   button:
     enable: true
-    label: "Empezá ahora"
+    label: "Probá gratis 1 mes"
     link: "https://app.barbersoftly.com/signup"
 ---

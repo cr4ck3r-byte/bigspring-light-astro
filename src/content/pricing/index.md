@@ -1,6 +1,6 @@
 ---
 title: Planes y precios
-description: "Planes de Barbersoftly para barberías en Paraguay: Solo, Equipo y Negocio. Reservas online, agenda por barbero, tu propia marca y catálogo de productos, sin cupos de citas."
+description: "Planes de Barbersoftly para barberías en Paraguay: Solo, Equipo y Negocio. El primer mes es gratis en todos los planes. Reservas online, agenda por barbero, tu propia marca y catálogo de productos, sin cupos de citas."
 draft: false
 plans:
   - title: Solo
@@ -18,7 +18,7 @@ plans:
       - Ingresos y actividad a la vista
       - Sin cupos de citas, clientes ni ventas
     button:
-      label: Empezar con Solo
+      label: Probar Solo gratis
       link: "https://app.barbersoftly.com/signup"
   - title: Equipo
     subtitle: Más sillones. Un equipo organizado.
@@ -33,7 +33,7 @@ plans:
       - Las reservas de tu equipo en un mismo panel
       - Actividad e ingresos por barbero
     button:
-      label: Empezar con Equipo
+      label: Probar Equipo gratis
       link: "https://app.barbersoftly.com/signup"
   - title: Negocio
     subtitle: Tu barbería crece. Vos mantenés el control.
@@ -47,7 +47,7 @@ plans:
       - Una misma marca, con información y galería propias para cada sucursal
       - Seguimiento de la actividad por sede
     button:
-      label: Empezar con Negocio
+      label: Probar Negocio gratis
       link: "https://app.barbersoftly.com/signup"
 call_to_action:
   title: ¿Tenés más sucursales o un equipo más grande?
