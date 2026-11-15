@@ -55,6 +55,8 @@ export type TPlan = {
   price: number;
   recommended: boolean;
   type: string;
+  barbers?: number;
+  branches?: number;
   features: string[];
   button: {
     label: string;

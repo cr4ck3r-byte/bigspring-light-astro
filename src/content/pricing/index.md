@@ -4,6 +4,8 @@ description: "Planes de Barbersoftly para barberías en Paraguay: Solo, Equipo y
 draft: false
 plans:
   - title: Solo
+    barbers: 1
+    branches: 1
     subtitle: Vos ponés el talento. Tu agenda acompaña.
     price: 99000
     type: mes
@@ -21,6 +23,8 @@ plans:
       label: Probar Solo gratis
       link: "https://app.barbersoftly.com/signup"
   - title: Equipo
+    barbers: 5
+    branches: 1
     subtitle: Más sillones. Un equipo organizado.
     price: 199000
     type: mes
@@ -36,6 +40,8 @@ plans:
       label: Probar Equipo gratis
       link: "https://app.barbersoftly.com/signup"
   - title: Negocio
+    barbers: 10
+    branches: 2
     subtitle: Tu barbería crece. Vos mantenés el control.
     price: 349000
     type: mes

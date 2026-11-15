@@ -3,60 +3,307 @@ import Base from "@/layouts/Base.astro";
 import Cta from "@/layouts/components/Cta.astro";
 import type { TPostType, TPlan } from "@/types";
 import { getEntryBySlug } from "astro:content";
+import { featureIcon, splitFeatures } from "@/lib/planFeatures";
 
 const entry = (await getEntryBySlug("pricing", "index")) as TPostType;
 const { title, description, plans, call_to_action } = entry.data;
+
+// Un ícono por nivel de plan: tijera (Solo), equipo (Equipo), sucursales (Negocio).
+const icons = [
+  '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/>',
+  '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  '<path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6M9 10h.01M15 10h.01"/>',
+];
 ---
 
 <Base title={title} description={description}>
   <section class="section pb-0">
     <div class="container">
-      <h1 class="text-center font-normal">{title}</h1>
-      <p class="mx-auto mt-6 w-fit rounded-full bg-primary px-6 py-2 text-center text-lg font-bold text-white">
-        🎁 Todos los planes son gratis durante el primer mes
-      </p>
-      <p class="mt-4 text-center">Probalo 30 días sin pagar y sin cargar una tarjeta. Después, precios mensuales en guaraníes. Sin cupos de citas, clientes ni ventas.</p>
-      <div class="section row -mt-10 justify-center md:mt-0">
+      <div class="text-center">
+        <span class="pricing-eyebrow">Precios en guaraníes · sin letra chica</span>
+        <h1 class="mt-4 font-normal">{title}</h1>
+        <p class="pricing-gift">
+          <span aria-hidden="true">🎁</span> Todos los planes son gratis durante el primer mes
+        </p>
+        <p class="mx-auto mt-4 max-w-2xl">
+          Probalo 30 días sin pagar y sin cargar una tarjeta. Después, precios mensuales en guaraníes. Sin cupos de citas, clientes ni ventas.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
         {
-          plans?.map((plan: TPlan) => (
-            <div
-              class={`col-12 md:col-4 ${
-                !plan.recommended ? "lg:px-0" : "col-recommended"
-              }`}
-            >
-              <div class="card text-center">
-                <span class="mb-3 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-bold text-primary">
-                  1.er mes gratis
+          plans?.map((plan: TPlan, index: number) => (
+            <article class={`plan-card ${plan.recommended ? "plan-card--featured" : ""}`}>
+              {plan.recommended && <span class="plan-ribbon">★ El más elegido</span>}
+              <div class="plan-head">
+                <span class="plan-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons[index % icons.length]} />
                 </span>
-                <h4>{plan.title}</h4>
-                <div class="mt-5">
-                  <span class="text-2xl text-dark">Gs.</span>{" "}
-                  <span class="text-5xl text-dark">
-                    {new Intl.NumberFormat("es-PY").format(plan.price)}
-                  </span>
-                  <span>/ {plan.type}</span>
+                <div>
+                  <h2 class="plan-title">{plan.title}</h2>
+                  <p class="plan-subtitle">{plan.subtitle}</p>
                 </div>
-                <p class="mt-2 text-sm font-semibold text-primary">Gs. 0 el primer mes · sin tarjeta</p>
-                <h5 class="mt-2 font-normal text-text">{plan.subtitle}</h5>
-                <ul class="mt-5">
-                  {plan?.features?.map((feature, index) => (
-                    <li class="mb-[10px] leading-5">{feature}</li>
+              </div>
+
+              {plan.barbers && (
+                <div class="plan-limits">
+                  <div><strong>{plan.barbers}</strong><span>{plan.barbers === 1 ? "barbero" : "barberos"}</span></div>
+                  <div><strong>{plan.branches ?? 1}</strong><span>{(plan.branches ?? 1) === 1 ? "sucursal" : "sucursales"}</span></div>
+                </div>
+              )}
+
+              <div class="plan-price">
+                <span class="plan-currency">Gs.</span>
+                <span class="plan-amount">{new Intl.NumberFormat("es-PY").format(plan.price)}</span>
+                <span class="plan-period">/ {plan.type}</span>
+              </div>
+              <p class="plan-trial">
+                <span aria-hidden="true">⚡</span> Gs. 0 el primer mes · sin tarjeta
+              </p>
+
+              <a class="plan-cta" href={plan.button.link}>
+                {plan.button.label}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+
+              <div class="plan-features">
+                <p class="plan-features-title">
+                  {splitFeatures(plan.features).inherits ? <>Todo lo de <strong>{splitFeatures(plan.features).inherits}</strong>, más:</> : "Incluye:"}
+                </p>
+                <ul>
+                  {splitFeatures(plan.features).items.map((feature) => (
+                    <li>
+                      <span class="plan-feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={featureIcon(feature)} />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
                   ))}
                 </ul>
-                <a
-                  class={`btn mt-5 ${
-                    plan.recommended ? "btn-primary" : "btn-outline-primary"
-                  }`}
-                  href={plan.button.link}
-                >
-                  {plan.button.label}
-                </a>
               </div>
-            </div>
+            </article>
           ))
         }
       </div>
+
+      <p class="pricing-trust">
+        <span>✓ 30 días gratis</span>
+        <span>✓ Sin tarjeta para empezar</span>
+        <span>✓ Sin cupos de citas</span>
+      </p>
     </div>
   </section>
   <Cta cta={call_to_action} />
 </Base>
+
+<style>
+  .pricing-eyebrow {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 6px 14px;
+    background: #edfbff;
+    color: #0e97e1;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .pricing-gift {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 24px;
+    border-radius: 999px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #0e97e1, #0a6fb0);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgb(14 151 225 / 35%);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: stretch;
+    max-width: 1140px;
+    margin: 56px auto 0;
+  }
+  @media (min-width: 900px) {
+    .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: center; }
+  }
+
+  .plan-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e3eef5;
+    border-radius: 22px;
+    padding: 32px 28px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgb(11 37 55 / 8%);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  .plan-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 5px;
+    border-radius: 22px 22px 0 0;
+    background: linear-gradient(90deg, #0e97e1, #5cc8ff);
+  }
+  .plan-card:not(.plan-card--featured) { overflow: hidden; }
+  .plan-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgb(11 37 55 / 14%); }
+
+  .plan-card--featured {
+    border: 0;
+    padding: 44px 30px 36px;
+    color: #d8ecf8;
+    background:
+      radial-gradient(120% 60% at 100% 0%, rgb(92 200 255 / 28%), transparent 60%),
+      linear-gradient(160deg, #0b2537 0%, #0d3b5c 55%, #0e6aa3 100%);
+    box-shadow: 0 30px 70px rgb(14 151 225 / 35%), 0 0 0 2px rgb(92 200 255 / 45%);
+  }
+  .plan-card--featured::before { display: none; }
+  @media (min-width: 900px) {
+    .plan-card--featured { z-index: 1; transform: scale(1.06); }
+    .plan-card--featured:hover { transform: scale(1.06) translateY(-6px); }
+  }
+
+  .plan-ribbon {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    padding: 7px 18px;
+    background: linear-gradient(135deg, #ffb703, #fb8500);
+    color: #1d1300;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgb(251 133 0 / 40%);
+  }
+
+  .plan-head { display: flex; gap: 14px; align-items: flex-start; }
+  .plan-icon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 14px;
+    background: #edfbff;
+    color: #0e97e1;
+  }
+  .plan-icon svg { width: 24px; height: 24px; }
+  .plan-card--featured .plan-icon { background: rgb(255 255 255 / 12%); color: #7fd6ff; }
+
+  .plan-title { margin: 0; color: #222; font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+  .plan-subtitle { margin: 4px 0 0; color: #666; font-size: 0.95rem; line-height: 1.4; }
+  .plan-card--featured .plan-title { color: #fff; }
+  .plan-card--featured .plan-subtitle { color: #a9cfe6; }
+
+  .plan-price { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; margin-top: 28px; color: #222; }
+  .plan-currency { font-size: 1.25rem; font-weight: 700; }
+  .plan-amount { font-size: clamp(2.6rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .plan-period { color: #777; font-size: 1rem; }
+  .plan-card--featured .plan-price { color: #fff; }
+  .plan-card--featured .plan-period { color: #a9cfe6; }
+
+  .plan-trial {
+    display: inline-flex;
+    gap: 6px;
+    align-self: flex-start;
+    margin-top: 12px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    background: #e9f8ef;
+    color: #137a43;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .plan-card--featured .plan-trial { background: rgb(74 222 128 / 15%); color: #86efac; }
+
+  .plan-cta {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    margin-top: 24px;
+    border: 2px solid #0e97e1;
+    border-radius: 12px;
+    padding: 0 20px;
+    color: #0e97e1;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .plan-cta svg { width: 18px; height: 18px; transition: transform 160ms ease; }
+  .plan-cta:hover { background: #0e97e1; color: #fff; }
+  .plan-cta:hover svg { transform: translateX(4px); }
+  .plan-cta:focus-visible { outline: 3px solid rgb(14 151 225 / 40%); outline-offset: 3px; }
+  .plan-card--featured .plan-cta {
+    border: 0;
+    background: linear-gradient(135deg, #38bdf8, #0e97e1);
+    color: #fff;
+    box-shadow: 0 12px 28px rgb(14 151 225 / 50%);
+  }
+  .plan-card--featured .plan-cta:hover { background: linear-gradient(135deg, #5cc8ff, #0a85c9); }
+
+  .plan-limits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+  .plan-limits div { display: flex; gap: 8px; align-items: baseline; border-radius: 12px; padding: 10px 14px; background: #f3f9fd; }
+  .plan-limits strong { color: #0e97e1; font-size: 1.6rem; font-weight: 800; line-height: 1; }
+  .plan-limits span { color: #555; font-size: 0.85rem; font-weight: 700; }
+  .plan-card--featured .plan-limits div { background: rgb(255 255 255 / 9%); }
+  .plan-card--featured .plan-limits strong { color: #7fd6ff; }
+  .plan-card--featured .plan-limits span { color: #d8ecf8; }
+
+  .plan-features { margin-top: 28px; border-top: 1px dashed #dbe7ef; padding-top: 22px; }
+  .plan-card--featured .plan-features { border-color: rgb(255 255 255 / 18%); }
+  .plan-features-title { margin: 0 0 14px; color: #222; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .plan-features-title strong { color: #0e97e1; }
+  .plan-card--featured .plan-features-title { color: #fff; }
+  .plan-card--featured .plan-features-title strong { color: #7fd6ff; }
+  .plan-features ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .plan-features li { display: flex; gap: 12px; align-items: center; color: #333; font-size: 0.95rem; line-height: 1.4; }
+  .plan-card--featured .plan-features li { color: #e3f2fb; }
+  .plan-feature-icon {
+    display: grid;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 10px;
+    background: #edfbff;
+    color: #0e97e1;
+  }
+  .plan-feature-icon svg { width: 18px; height: 18px; }
+  .plan-card--featured .plan-feature-icon { background: rgb(56 189 248 / 18%); color: #7fd6ff; }
+
+  .pricing-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    justify-content: center;
+    margin: 48px 0 0;
+    color: #555;
+    font-weight: 700;
+  }
+
+  @media (max-width: 899px) {
+    .plan-card--featured:hover { transform: translateY(-6px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .plan-card, .plan-cta, .plan-cta svg { transition: none; }
+    .plan-card:hover, .plan-card--featured:hover { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) and (min-width: 900px) {
+    .plan-card--featured, .plan-card--featured:hover { transform: scale(1.06); }
+  }
+</style>
