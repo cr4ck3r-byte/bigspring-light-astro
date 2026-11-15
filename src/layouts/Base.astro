@@ -176,5 +176,19 @@ const { title, meta_title, description, image, noindex, canonical } =
       <slot />
     </main>
     <Footer />
+    <script>
+      import { forwardUtm } from "@/lib/utmForward";
+      const storage = () => {
+        try {
+          return window.sessionStorage;
+        } catch {
+          return null;
+        }
+      };
+      // astro:page-load corre en la carga inicial y tras cada transición de vista.
+      document.addEventListener("astro:page-load", () =>
+        forwardUtm(document, window.location.search, storage()),
+      );
+    </script>
   </body>
 </html>
